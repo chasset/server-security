@@ -8,11 +8,11 @@
   hosts: all
   become: true
   roles:
-    - env_vars
-    - ssh_key
-    - ssh_server
+    - env-vars
+    - ssh
+    - sshd
     - firewall
     - os
     - auditd
     - fail2ban
-    - mail_root
+    - mail-root
