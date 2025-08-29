@@ -90,8 +90,8 @@
   always:
     - name: Vérifier la configuration SSH effective
       ansible.builtin.command: grep -E '^(PermitRootLogin|PasswordAuthentication|ChallengeResponseAuthentication|MaxAuthTries|LoginGraceTime|LogLevel|AllowUsers|PubkeyAuthentication|ClientAliveInterval|ClientAliveCountMax)' /etc/ssh/sshd_config # noqa yaml[line-length]
-      register: ssh_server_config_check
+      register: sshd_server_config_check
       changed_when: false
     - name: Afficher la configuration SSH effective
       ansible.builtin.debug:
-        var: ssh_server_config_check.stdout_lines
+        var: sshd_server_config_check.stdout_lines
